@@ -28,7 +28,7 @@ public class Line extends Shape {
 	}
 
 	private void construct(Shape s, float angle) {
-		int sizeV = s.verts(), sizeE = s.edges(), sizeT;
+		int sizeV = s.verts(), sizeE = s.edges(), sizeT = s.verts();
 		if (s.getClass().getName() == Edge.class.getName()) {
 			vertices.add(pos1);
 			vertices.add(pos2);
@@ -39,14 +39,12 @@ public class Line extends Shape {
 			edges.add(new Vector2f(0, 0));
 			edges.add(new Vector2f(1, 1));
 		} else {
-			sizeT = vertices.size();
 			for (int i = 0; i < sizeV; i++) {
 				vertices.add(s.vertices.get(i).add(pos1.x, pos1.y));
 			}
 			for (int i = 0; i < sizeE; i++) {
-				edges.add(s.edges.get(i).add(sizeT));
+				edges.add(s.edges.get(i));
 			}
-			sizeT = vertices.size();
 			for (int i = 0; i < sizeV; i++) {
 				vertices.add(s.vertices.get(i).add(pos2.x, pos2.y));
 			}
