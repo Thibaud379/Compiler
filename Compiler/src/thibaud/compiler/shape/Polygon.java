@@ -1,18 +1,44 @@
 package thibaud.compiler.shape;
 
 import thibaud.compiler.maths.Vector2f;
+import static java.lang.Math.*;
 
 public class Polygon extends Shape {
-	private Vector2f pos;
 
-	public Polygon(float x, float y, float radius, float angle, Shape s, int faces) {
+	public Polygon(float x, float y, float radius, float angle, Shape s, int sides) {
 		super();
-		pos = new Vector2f(x, y);
+		Vector2f pos = new Vector2f(x, y);
+		construct(s, angle, radius, pos, sides);
 
 	}
 
-	public Polygon(float x, float y, double size, float angle, Shape s, int faces) {
+	public Polygon(float x, float y, double size, float angle, Shape s, int sides) {
 		super();
-		pos = new Vector2f(x, y);
+		Vector2f pos = new Vector2f(x, y);
+		float radius = (float) (size / (2 * sin(Math.PI / sides)));
+		construct(s, angle, radius, pos, sides);
+	}
+
+	private void construct(Shape s, float angle, float radius, Vector2f pos, int sides) {
+		Vector2f pos1, pos2, start;
+		float rot = (float) ((2 * PI) / sides);
+		pos1 = rotate(new Vector2f(0, radius), angle, pos);
+		vertices.add(pos1);
+		if (s.getClass().getName() == Edge.class.getName()) {
+			for (int i = 0; i < sides - 1; i++) {
+				pos2 = rotate(new Vector2f(0, radius), rot * (i + 1) + angle, pos);
+				vertices.add(pos2);
+				edges.add(new Vector2f(i, i + 1));
+				pos1 = pos2;
+			}
+			edges.add(new Vector2f(sides - 1, 0));
+		} else if (s.getClass().getName() == Point.class.getName()) {
+			for (int i = 0; i < sides - 1; i++) {
+				pos2 = rotate(new Vector2f(0, radius), rot * (i + 1) + angle, pos);
+				vertices.add(pos1);
+				edges.add(new Vector2f(i, i));
+				pos1 = pos2;
+			}
+		}
 	}
 }

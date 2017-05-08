@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import thibaud.compiler.shape.Edge;
 import thibaud.compiler.shape.Line;
+import thibaud.compiler.shape.Polygon;
 import thibaud.compiler.shape.Shape;
 import thibaud.compiler.utils.FileUtil;
 
@@ -19,10 +20,10 @@ public class Main {
 			System.out.println(line);
 			index++;
 		}
-		Line l2 = new Line(0,0,10d,(float)Math.PI/2,new Edge());
-		Line l1 = new Line(0,0,10,0d,l2);
-		System.out.println(l1.draw()+"\n");
-		
+		Polygon p = new Polygon(0, 0, 10d, (float) (Math.PI/4), new Edge(), 4);
+
+		System.out.println(p.draw() + "\n");
+
 	}
 
 }
