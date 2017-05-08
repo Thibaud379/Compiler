@@ -52,7 +52,7 @@ public class Line extends Shape {
 			}
 		}
 
-		rotate(angle, Vector2f.center(pos1,pos2));
+		rotate(angle, Vector2f.center(pos1, pos2));
 	}
 
 }

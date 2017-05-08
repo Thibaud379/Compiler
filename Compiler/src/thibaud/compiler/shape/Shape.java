@@ -57,9 +57,8 @@ public class Shape {
 				float curY = vertices.get(i).add(-center.y).y;
 				float r = (float) Math.sqrt(curX * curX + curY * curY);
 				float a = (float) Math.atan2(curY, curX) + angle;
-				vertices.set(i, new Vector2f(
-						(float) (r * Math.cos(a)) + center.x, 
-						(float) (r * Math.sin(a)) + center.y));
+				vertices.set(i,
+						new Vector2f((float) (r * Math.cos(a)) + center.x, (float) (r * Math.sin(a)) + center.y));
 			}
 		}
 	}
@@ -72,8 +71,7 @@ public class Shape {
 			float curY = vec.add(-center.y).y;
 			float r = (float) Math.sqrt(curX * curX + curY * curY);
 			float a = (float) Math.atan2(curY, curX) + angle;
-			return new Vector2f((float) (r * Math.cos(a)) + center.x, 
-								(float) (r * Math.sin(a)) + center.y);
+			return new Vector2f((float) (r * Math.cos(a)) + center.x, (float) (r * Math.sin(a)) + center.y);
 		} else
 			return vec;
 	}

@@ -20,7 +20,9 @@ public class Main {
 			System.out.println(line);
 			index++;
 		}
-		Polygon p = new Polygon(0, 0, 10d, (float) (Math.PI/4), new Edge(), 4);
+
+		Polygon p1 = new Polygon(0, 0, 2d, (float) (Math.PI / 4), new Edge(), 4);
+		Polygon p = new Polygon(0, 0, 10d, (float) (Math.PI / 4), p1, 4);
 
 		System.out.println(p.draw() + "\n");
 
