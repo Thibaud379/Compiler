@@ -13,7 +13,6 @@ public class Shape {
 	}
 
 	public String draw() {
-
 		String shape = "";
 		Vector2f vert1 = new Vector2f(), last = new Vector2f();
 		Vector2f vert2 = new Vector2f();

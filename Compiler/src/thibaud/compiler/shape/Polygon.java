@@ -35,9 +35,9 @@ public class Polygon extends Shape {
 			edges.add(new Vector2f(sides - 1, 0));
 		} else if (s.getClass().getName() == Point.class.getName()) {
 			vertices.add(pos1);
-			for (int i = 0; i < sides - 1; i++) {
+			for (int i = 0; i < sides; i++) {
 				pos2 = rotate(new Vector2f(0, radius), rot * (i + 1) + angle, pos);
-				vertices.add(pos1);
+				vertices.add(pos2);
 				edges.add(new Vector2f(i, i));
 				pos1 = pos2;
 			}

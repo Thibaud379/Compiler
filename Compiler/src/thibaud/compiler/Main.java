@@ -1,30 +1,33 @@
 package thibaud.compiler;
 
-import java.util.HashMap;
+import static thibaud.compiler.Parser.parse;
 
-import thibaud.compiler.shape.Edge;
-import thibaud.compiler.shape.Line;
-import thibaud.compiler.shape.Polygon;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import thibaud.compiler.shape.Shape;
 import thibaud.compiler.utils.FileUtil;
 
 public class Main {
 
 	public static void main(String[] args) {
-		HashMap<Float, String> varFloats;
-		HashMap<Shape, String> varShapes;
+		try {
+			PrintWriter writer = new PrintWriter(args[0]+".s2d", "UTF-8");
+			String line = null;
+			int index = 0;
+			Shape s = null;
 
-		String line = null;
-		int index = 0;
-		while ((line = FileUtil.readLine(args[0], index)) != null) {
-			System.out.println(line);
-			index++;
+			while ((line = FileUtil.readLine(args[0], index)) != null) {
+				s = parse(line);
+				System.out.print(s.draw());
+				writer.print(s.draw());
+				index++;
+			}
+
+			writer.close();
+		} catch (IOException e) {
+
 		}
-
-		Polygon p1 = new Polygon(0, 0, 2d, (float) (Math.PI / 4), new Edge(), 4);
-		Polygon p = new Polygon(0, 0, 10d, (float) (Math.PI / 4), p1, 4);
-
-		System.out.println(p.draw() + "\n");
 
 	}
 
