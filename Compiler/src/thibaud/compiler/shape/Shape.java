@@ -21,18 +21,17 @@ public class Shape {
 			vert2 = vertices.get((int) edge.y);
 
 			if (vert1 == vert2) {
+				shape += "up\n";
 				shape += round(vert1.x) + "," + round(vert1.y) + "\n";
 				shape += "down\n";
 				shape += "up\n";
 			} else if (last == vert1) {
-				shape += "down\n";
 				shape += round(vert2.x) + "," + round(vert2.y) + "\n";
-				shape += "up\n";
 			} else {
+				shape += "up\n";
 				shape += round(vert1.x) + "," + round(vert1.y) + "\n";
 				shape += "down\n";
 				shape += round(vert2.x) + "," + round(vert2.y) + "\n";
-				shape += "up\n";
 			}
 			last = vert2;
 		}
