@@ -9,9 +9,3 @@ LineR(x, y, radius, a, drawType)
 LineS(x, y, size, a, drawType)
 PolygonX(x, y, radius, a, drawType)
 PolygonSX(x, y, size, a, drawType)
-
-%keys:
-%	all: (^[\w&&[^\d]]+)\(((\d+\.?\d*, )+)(.+)?\) 
-%		1 = type, 2 = args, 3 = last numerical arg, 4 = drawTpe
-%
-%

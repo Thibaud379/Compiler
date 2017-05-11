@@ -5,9 +5,11 @@ import java.util.regex.Pattern;
 
 public class MatcherUtils {
 	private static String keyAll = "(^\\w+)\\(((\\d+\\.?\\d*, )+)(.+)?\\)";
-	private static Pattern pattern = Pattern.compile(keyAll);
+	private static String keyVariableDeclaration = "(^\\w+)\\(((\\d+\\.?\\d*, )+)(.+)?\\)";
+	private static Pattern pattern;
 
 	public static Matcher getMatcher(String text) {
+		pattern = Pattern.compile(keyAll);
 		return pattern.matcher(text);
 	}
 
