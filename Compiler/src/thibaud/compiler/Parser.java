@@ -4,8 +4,6 @@ import static thibaud.compiler.utils.MatcherUtils.getArgs;
 import static thibaud.compiler.utils.MatcherUtils.getShape;
 import static thibaud.compiler.utils.MatcherUtils.getType;
 
-import java.util.ArrayList;
-
 import thibaud.compiler.maths.Vector2f;
 import thibaud.compiler.shape.Edge;
 import thibaud.compiler.shape.Line;
