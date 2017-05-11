@@ -36,7 +36,7 @@ public class Parser {
 				} else {
 					output = new Line(cArgs[0], cArgs[1], cArgs[2], cArgs[3], s);
 				}
-			}else{
+			} else {
 				Shape s = parse(shape);
 				if (type.endsWith("R")) {
 					output = new Line(cArgs[0], cArgs[1], (double) cArgs[2], cArgs[3], s);
@@ -53,20 +53,22 @@ public class Parser {
 					output = new Polygon(cArgs[0], cArgs[1], (double) cArgs[2], cArgs[3], s,
 							type.charAt(type.length() - 1));
 				} else {
-					output = new Polygon(cArgs[0], cArgs[1], cArgs[2], cArgs[3], s, Integer.valueOf(type.substring(7, type.length())));
+					output = new Polygon(cArgs[0], cArgs[1], cArgs[2], cArgs[3], s,
+							Integer.valueOf(type.substring(7, type.length())));
 				}
-			}else{
+			} else {
 				Shape s = parse(shape);
 				if (type.startsWith("PolygonS")) {
 					output = new Polygon(cArgs[0], cArgs[1], (double) cArgs[2], cArgs[3], s,
 							type.charAt(type.length() - 1));
 				} else {
-					output = new Polygon(cArgs[0], cArgs[1], cArgs[2], cArgs[3], s, Integer.valueOf(type.substring(7, type.length())));
+					output = new Polygon(cArgs[0], cArgs[1], cArgs[2], cArgs[3], s,
+							Integer.valueOf(type.substring(7, type.length())));
 				}
 			}
 		}
-		if(output == null)
-		LogUtil.log("Could not parse \""+str+"\"", 2);
+		if (output == null)
+			LogUtil.log("Could not parse \"" + str + "\"", 2);
 		return output;
 	}
 }
