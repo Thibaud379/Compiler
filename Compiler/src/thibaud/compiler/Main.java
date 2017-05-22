@@ -21,9 +21,11 @@ public class Main {
 			Shape s = null;
 
 			while ((line = FileUtil.readLine(args[0], index)) != null) {
-				s = parse(line, sf, ss);
-				System.out.print(s.draw());
-				writer.print(s.draw());
+				if ((s = parse(line, sf, ss)) != null) {
+					System.out.print(s.draw());
+					writer.print(s.draw());
+				}
+
 				index++;
 			}
 
