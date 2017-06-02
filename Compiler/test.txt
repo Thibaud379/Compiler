@@ -1,5 +1,4 @@
 #float a = 10
 #shape b = Polygon4(0, 0, 1, 0, Edge)
 #shape s = Polygon4(0, 0, 1, 0, #b)
-%test
 LineR(0, 0, #a, 0, #s)
