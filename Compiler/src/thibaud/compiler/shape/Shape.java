@@ -24,7 +24,6 @@ public class Shape {
 				shape += "up\n";
 				shape += round(vert1.x) + "," + round(vert1.y) + "\n";
 				shape += "down\n";
-				shape += "up\n";
 			} else if (last == vert1) {
 				shape += round(vert2.x) + "," + round(vert2.y) + "\n";
 			} else {

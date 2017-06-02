@@ -18,9 +18,9 @@ public class FileUtil {
 			br.close();
 			return line;
 		} catch (IOException e) {
-			e.printStackTrace();
+			LogUtil.log("File not found: " + path, 4);
 		}
-		LogUtil.log("File not found: " + path, 4);
+		
 		return null;
 
 	}

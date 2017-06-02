@@ -1,7 +1,6 @@
 %COMMENT
-#float a = 10.3, size = 1, radius = 1
-
-#shape drawType = Point(x,y)
+#float a = 10.3
+#shape drawType = PolygonS4(0, 0, 1, 0, Edge)
 
 Point(x, y)
 Line(x, y, x2, y2, drawType)
@@ -9,3 +8,9 @@ LineR(x, y, radius, a, drawType)
 LineS(x, y, size, a, drawType)
 PolygonX(x, y, radius, a, drawType)
 PolygonSX(x, y, size, a, drawType)
+
+%draw types: -Any shape
+%			 -Edge
+%PolygonX is a polygon with X sides
+%a is an angle in radians
+%
