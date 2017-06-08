@@ -17,7 +17,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		for(int i = 0; i < args.length; i++) {
-			Main.args[i] = args[i];
+			Main.args[i] = args[i]; 
 		}
 		try {
 			PrintWriter writer = new PrintWriter(Main.args[0] + ".s2d", "UTF-8");
