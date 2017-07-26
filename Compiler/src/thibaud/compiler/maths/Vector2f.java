@@ -24,7 +24,7 @@ public class Vector2f {
 	public static Vector2f center(Vector2f a, Vector2f b) {
 		return new Vector2f((a.x + b.x) / 2, (a.y + b.y) / 2);
 	}
-
+	
 	public void draw(String str) {
 		System.out.println(str + " " + x + "x, " + y + "y.");
 	}

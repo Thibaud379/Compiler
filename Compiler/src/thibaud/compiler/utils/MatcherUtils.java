@@ -25,9 +25,10 @@ public class MatcherUtils {
 	}
 
 	public static Float[] getArgs(String text) {
+		int nbArg = text.split(", ").length+1;
 		Matcher matcher = getMatcher(text, keyAll);
 		String[] str;
-		Float[] args = new Float[4];
+		Float[] args = new Float[nbArg];
 		if (matcher.find()) {
 			str = matcher.group(2).split(", ");
 			for (int i = 0; i < str.length; i++) {

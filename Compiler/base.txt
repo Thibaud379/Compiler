@@ -8,6 +8,7 @@ LineR(x, y, radius, a, drawType)
 LineS(x, y, size, a, drawType)
 PolygonX(x, y, radius, a, drawType)
 PolygonSX(x, y, size, a, drawType)
+Shape(x1, y1, x2, y2, ..., xN, yN, drawType)
 
 %draw types: -Any shape
 %			 -Edge
