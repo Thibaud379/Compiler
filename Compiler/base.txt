@@ -1,5 +1,5 @@
 %COMMENT
-#float a = 10.3
+#float a = 3.14
 #shape drawType = PolygonS4(0, 0, 1, 0, Edge)
 
 Point(x, y)
