@@ -21,7 +21,6 @@ public class Shape {
 		if (s.getClass().getName() == Edge.class.getName()) {
 			vertices.add(pos1);
 			for (int i = 1; i < points.length/2-1; i++) {
-				System.out.println("1 :"+points.length/2+" :"+(i*2+2));
 				pos2 = new Vector2f(points[i*2], points[i*2+1]);
 				vertices.add(pos2);
 				edges.add(new Vector2f(i-1, i ));
@@ -50,11 +49,11 @@ public class Shape {
 	}
 
 	public String draw() {
-		for(Vector2f test: edges) {
-			test.draw("test");  
-			vertices.get((int) test.x).draw("1:");
-			vertices.get((int) test.y).draw("2:");
-		}
+//		for(Vector2f test: edges) {
+//			test.draw("test");  
+//			vertices.get((int) test.x).draw("1:");
+//			vertices.get((int) test.y).draw("2:");
+//		}
 		String shape = "";
 		Vector2f vert1 = new Vector2f(), last = new Vector2f();
 		Vector2f vert2 = new Vector2f();

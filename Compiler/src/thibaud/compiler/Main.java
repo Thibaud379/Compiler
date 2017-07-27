@@ -14,7 +14,7 @@ public class Main {
 	public static HashMap<String, Float> sf = new HashMap<String, Float>();
 	public static HashMap<String, Shape> ss = new HashMap<String, Shape>();
 	public static String[] args = {"",""};
-
+	public static int index = 0;
 	public static void main(String[] args) {
 		for(int i = 0; i < args.length; i++) {
 			Main.args[i] = args[i]; 
@@ -22,13 +22,12 @@ public class Main {
 		try {
 			PrintWriter writer = new PrintWriter(Main.args[0] + ".s2d", "UTF-8");
 			String line = null;
-			int index = 0;
+			
 			Shape s = null;
 
 			while ((line = FileUtil.readLine(args[0], index)) != null) {
 				if ((s = parse(line)) != null) {
-					if(args.length > 1 && args[1].equals("debug"))
-						System.out.print(s.draw());
+					LogUtil.log(s.draw(), 0);
 					writer.print(s.draw());
 					
 				}

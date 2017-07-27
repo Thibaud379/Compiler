@@ -7,7 +7,8 @@ import thibaud.compiler.Main;
 
 public class MatcherUtils {
 	public final static String keyAll = "(^\\w+)\\(((.+, )+)(.+)?\\)";
-	public final static String keyVariableDeclaration = "(\\w+) (\\w+) = (.+)";
+	public final static String keyVariableDeclaration = "#(\\w+) (\\w+) = (.+)";
+	public final static String keyFloatAssignement = "#(\\w+) = (\\S+) ([+-/*]) (\\S+)";
 	private static Pattern pattern;
 
 	public static Matcher getMatcher(String text, String pat) {
@@ -35,8 +36,8 @@ public class MatcherUtils {
 				try {
 					args[i] = Float.valueOf(str[i]);
 				}catch(NumberFormatException e){
-					LogUtil.log("Variable found: "+ str[i], 0);
 					if(str[i].startsWith("#")) {
+						LogUtil.log("Variable found: "+ str[i].substring(1), 0);
 						args[i] = Float.valueOf(Main.sf.get(str[i].substring(1)));
 						
 					}

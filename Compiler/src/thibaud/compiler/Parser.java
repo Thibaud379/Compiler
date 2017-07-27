@@ -24,6 +24,9 @@ public class Parser {
 		} else if (getMatcher(str, MatcherUtils.keyVariableDeclaration).find()) {
 			parseVar(str);
 			return null;
+		} else if (getMatcher(str, MatcherUtils.keyVariableDeclaration).find()) {
+			parseVar(str);
+			return null;
 		} else if (str.startsWith("%")) {
 			LogUtil.log("Comment: " + str, 1);
 		} else {
@@ -38,7 +41,8 @@ public class Parser {
 			Main.sf.put(getVarName(str), getVarValue(str));
 		} else if (getVarType(str).equals("shape")) {
 			Main.ss.put(getVarName(str), parseShape(getVarArgs(str)));
-		}
+		}else
+			LogUtil.log("\"" + getVarType(str) + "\" n'est pas reconnu comme un type de variable", 4);
 
 	}
 
@@ -50,9 +54,9 @@ public class Parser {
 		Shape s = null;
 
 		if (type == null || cArgs == null || shape == null) {
-			LogUtil.log("String: \"" + str + "\" couldn't be parsed", 3);
+			LogUtil.log("String: \"" + str + "\" couldn't be parsed", 4);
 		}
-
+		
 		if (type.equals("Point")) {
 			output = new Point(new Vector2f(cArgs[0], Float.valueOf(shape)));
 		} else if (type.startsWith("Line")) {

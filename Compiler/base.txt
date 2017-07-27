@@ -1,7 +1,7 @@
 %COMMENT
 #float a = 3.14
 #shape drawType = PolygonS4(0, 0, 1, 0, Edge)
-
+#a = #a + 2
 Point(x, y)
 Line(x, y, x2, y2, drawType)
 LineR(x, y, radius, a, drawType)
